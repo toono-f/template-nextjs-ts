@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     fetch("https://jsonplaceholder.typicode.com/posts/1", { method: "GET" })
       .then((res) => res.json())
       .then((resData) => setData(resData))
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error)); // この方法ではエラーを吐き出せない
   }, []);
 
   return (
