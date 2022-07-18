@@ -1,10 +1,6 @@
+import { todoListState } from "@/store/atom";
 import type { NextPage } from "next";
-import { atom, useRecoilValue, useSetRecoilState } from "recoil";
-
-const todoListState = atom({
-  key: "todoListState",
-  default: 0,
-});
+import { useRecoilValue, useSetRecoilState } from "recoil";
 
 const Child = () => {
   const count = useRecoilValue(todoListState);
