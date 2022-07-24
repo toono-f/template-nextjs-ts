@@ -11,10 +11,7 @@ type Post = {
 const fetcher = (url: string) => axios.get(url).then((res): Post => res.data);
 
 const Home: NextPage = () => {
-  const { data, error } = useSWR(
-    "https://jsonplaceholder.typicode.com/posts/1",
-    fetcher
-  );
+  const { data, error } = useSWR("http://localhost:4000/posts/1", fetcher);
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
